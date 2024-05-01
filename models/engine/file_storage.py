@@ -76,11 +76,10 @@ class FileStorage:
         if cls and id:
             if cls in classes.values() and isinstance(id,str):
                 all_obj = self.all(cls)
-                for key,value in all_obj.item():
-                    if key.split('.')[i] == id:
+                for key,value in all_obj.values():
+                    if value.id == id:
                         return value
-            else:
-                return
+            return
         return
 
 
